@@ -1,8 +1,6 @@
 package com.madtech.openai_question_evaluation_app.model;
 
 import com.madtech.openai_question_evaluation_app.utils.FileUtils;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import org.apache.hc.client5.http.classic.methods.HttpPost;
 import org.apache.hc.client5.http.entity.mime.FileBody;
 import org.apache.hc.client5.http.entity.mime.MultipartEntityBuilder;

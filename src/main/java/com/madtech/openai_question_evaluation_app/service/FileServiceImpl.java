@@ -4,7 +4,6 @@ import com.madtech.openai_question_evaluation_app.utils.FileUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -17,12 +16,12 @@ public class FileServiceImpl implements FileService{
         return FileUtils.saveFile(file);
     }
     @Override
-    public String convertToMp3(MultipartFile file) throws IOException {
+    public String convertToMp3(MultipartFile file)  {
         return FileUtils.convertToMp3(file);
     }
 
     @Override
-    public void deleteFile(String filePath) throws IOException {
+    public void deleteFile(String filePath) {
         Path path = Paths.get(filePath);
         try{
             Files.delete(path);

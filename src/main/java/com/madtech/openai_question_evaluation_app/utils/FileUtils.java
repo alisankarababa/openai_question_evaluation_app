@@ -15,14 +15,6 @@ public class FileUtils {
     public static final String VIDEO_RESOURCES_PATH = "resources/video/";
     public static final String AUDIO_RESOURCES_PATH = "resources/audio/";
 
-//    static {
-//        try {
-//            Files.createDirectories(Paths.get(TEXT_RESOURCES_PATH));
-//        } catch (IOException e) {
-//            throw new ExceptionInInitializerError("Error creating directory");
-//        }
-//    }
-
     public static void writeTextToFile(String textData, String fileName) {
         Path directory = Paths.get(TEXT_RESOURCES_PATH);
         Path filePath = directory.resolve(fileName);
@@ -99,7 +91,7 @@ public class FileUtils {
             String outputFileName = fileName + ".mp3";
             String outputFilePath = outputDirectory + outputFileName;
             System.out.println("Convert processes started");
-//            String ffmpegCommand = "ffmpeg -i " + inputFilePath + " -q:a 0 -map a " + outputFilePath;
+            //String ffmpegCommand = "ffmpeg -i " + inputFilePath + " -q:a 0 -map a " + outputFilePath;
             String[] ffmpegCommand = {
                     "ffmpeg", "-i", inputFilePath, "-q:a", "0", "-map", "a", outputFilePath
             };
@@ -122,7 +114,6 @@ public class FileUtils {
                 return "Could not convert to mp3 format.";
             }
         } catch (IOException | InterruptedException e) {
-            e.printStackTrace();
             return "Failed convert process";
         }
     }
